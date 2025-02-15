@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "[FOSS] Disable Ambient Mode in YouTube",
+    "version": "1.0.0",
+    "description": "Automatically turn off YouTube's ambient mode. Prevent unnecessary resource consumption.",
+    "permissions": ["storage"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
+}
