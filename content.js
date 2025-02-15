@@ -3,7 +3,7 @@ const settingsButton = document.querySelector('.ytp-settings-button');
 
 const observer = new MutationObserver(() => {
     if (settingsButton) {
-        if (!isMenuLoaded){
+        if (!isMenuLoaded) {
             console.log("-----------Opening settings menu");
             // Menu loads in DOM only when settings is opened - open and close quickly
             settingsButton.click();
@@ -15,7 +15,7 @@ const observer = new MutationObserver(() => {
             console.log("Ambient Mode option found.");
             let toggleState = ambientMenuItem.getAttribute("aria-checked");
 
-            if (toggleState !== "false") {
+            if (toggleState === "true") {
                 ambientMenuItem.click();
                 console.log("-----------Turning OFF!");
             } else {
@@ -23,6 +23,8 @@ const observer = new MutationObserver(() => {
             }
 
             observer.disconnect();
+            // Hide the ambient menu item for good
+            ambientMenuItem.style.display = 'none';
         }
     }
 });
