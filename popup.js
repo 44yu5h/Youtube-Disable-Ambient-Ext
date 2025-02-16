@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load settings from storage
     chrome.storage.sync.get(["ambientMode", "hideMenuItem"], (data) => {
-        updateToggle(ambientToggle, data.ambientMode ?? true);
+        updateToggle(ambientToggle, data.ambientMode ?? false);
         updateToggle(labelToggle, data.hideMenuItem ?? false);
     });
 

@@ -1,5 +1,5 @@
 zip:
-	zip -r disable-ambient-mode.zip ./manifest.json ./LICENSE ./README.md ./content.js 
+	zip -r disable-ambient-mode-ext.zip ./manifest.json ./content.js ./popup.html ./popup.js ./LICENSE ./README.md assets/icons/*
 
 release:
 	zip -r release.zip .
