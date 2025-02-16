@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            font-size: 16px;
+            width: 280px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+
+        /* Header */
+        h2 {
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+            margin-top: -8px;
+        }
+
+        /* Option Layout */
+        .option-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .end-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 10px 10px 14px;
+        }
+
+        /* Toggle Button */
+        .toggle-button {
+            display: flex;
+            position: relative;
+            background: #e2bdb4;
+            border-radius: 20px;
+            width: 140px;
+            height: 32px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .toggle-button div {
+            flex: 1;
+            font-size: 14px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 32px;
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .toggle-button .slider {
+            position: absolute;
+            height: 100%;
+            width: 70px;
+            background: #be7f78;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .toggle-button[data-active="true"] .slider {
+            transform: translateX(70px);
+        }
+
+        /* GitHub & Buy Me a Coffee Buttons */
+        .icon-btns-row {
+            align-self: end;
+            align-items: end;
+            justify-content: center;
+            display: flex;
+            margin-bottom: 10px;
+            gap: 14px;
+        }
+
+        .icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: background 0.2s;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h2>Ambient Mode Settings</h2>
+    <p class="description">This is an open-source lightweight<br>extension. Have a good day!</p>
+    
+    <!-- Ambient Mode Option -->
+    <div class="option-container">
+        <span>Ambient Mode</span>
+        <div class="toggle-button" id="ambientToggle" data-active="false">
+            <div>Never</div><div>Always</div>
+            <div class="slider"></div>
+        </div>
+    </div>
+    
+    <!-- Show Label Option -->
+    <div class="option-container">
+        <span>Perish you fool</span>
+        <div class="toggle-button" id="labelToggle" data-active="false">
+            <div>Correct</div><div>Let it be</div>
+            <div class="slider"></div>
+        </div>
+    </div>
+    
+    <div class="end-container">
+        <span>Drop by! 😇<br>Explore more</span>
+        <div class="icon-btns-row">
+            <a href="https://github.com/44yu5h/youtube-disable-ambient-ext" target="_blank" class="icon-btn">
+                <img src="https://seeklogo.com/images/G/github-mark-logo-BF9B96FEA9-seeklogo.com.png" alt="GitHub" class="icon" style="width: 42px; height: 42px;">
+            </a>
+            <a href="https://buymeacoffee.com/44yu5h" target="_blank" class="icon-btn">
+                <img src="https://cdn.buymeacoffee.com/uploads/profile_pictures/2020/10/61a02a6a61422f1718b2dfc60db93592.png@300w_0e.webp" alt="Buy Me a Coffee" class="icon" style="width: 42px; height: 42px;">
+            </a>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
+
+

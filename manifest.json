@@ -5,6 +5,9 @@
     "description": "Automatically turn off YouTube's ambient mode. Prevent unnecessary resource consumption.",
     "permissions": ["storage"],
     "host_permissions": ["https://www.youtube.com/*"],
+    "action": {
+        "default_popup": "popup.html"
+    },
     "content_scripts": [
       {
         "matches": ["https://www.youtube.com/*"],
