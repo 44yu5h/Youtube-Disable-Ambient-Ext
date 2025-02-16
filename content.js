@@ -32,4 +32,11 @@ chrome.storage.sync.get(["ambientMode", "hideMenuItem"], (data) => {
     ambientMode = data.ambientMode ?? true;
     hideMenuItem = data.hideMenuItem ?? false;
     observer.observe(document.body, { childList: true, subtree: true });
+    // Disconnect the observer after 40 sec if it cannot find the menu item
+    setTimeout(() => {
+        if (observer) {
+            console.log('Observer timeout reached, disconnecting observer');
+            observer.disconnect();
+        }
+    }, 40000);
 });
