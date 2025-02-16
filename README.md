@@ -11,7 +11,7 @@
 
 ---
 
-### This Chrome extension automatically disables the Ambient Mode on YouTube videos and even hides it if you hate it that much.
+### This Chrome extension automatically disables the "Ambient Mode" on YouTube videos and even hides it if you hate it that much.
 
 ## Features
  1. Disable Ambient Mode on YouTube

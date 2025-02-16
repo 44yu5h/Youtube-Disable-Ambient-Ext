@@ -3,7 +3,7 @@ const settingsButton = document.querySelector('.ytp-settings-button');
 let ambientMode, hideMenuItem;
 
 const observer = new MutationObserver(() => {
-    if (settingsButton && !isMenuLoaded) {
+    if (settingsButton) {
         // Menu loads in DOM only when settings is opened/expanded: open and close quickly
         settingsButton.click();
         settingsButton.click();
@@ -11,14 +11,11 @@ const observer = new MutationObserver(() => {
     }
 
     if (isMenuLoaded) {
-        console.log('Menu loaded');
         const ambientMenuItem = Array.from(document.querySelectorAll('.ytp-menuitem[role="menuitemcheckbox"]')).find(el => el.querySelector('.ytp-menuitem-label')?.textContent === "Ambient mode");
         if (ambientMenuItem) {
-            console.log('Ambient menu item found');
             observer.disconnect();
             const toggleState = ambientMenuItem.getAttribute("aria-checked") === "true";
             if (toggleState !== ambientMode) {
-                console.log('Toggling ambient mode');
                 ambientMenuItem.click();
             }
             if (hideMenuItem) {
@@ -35,7 +32,6 @@ chrome.storage.sync.get(["ambientMode", "hideMenuItem"], (data) => {
     // Disconnect the observer after 40 sec if it cannot find the menu item
     setTimeout(() => {
         if (observer) {
-            console.log('Observer timeout reached, disconnecting observer');
             observer.disconnect();
         }
     }, 40000);

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const slider = toggleElement.querySelector(".slider");
         if (toggleElement.id === "ambientToggle") {
             isActive = !isActive; // Value correction cuz I wanted the toggle opposite in the UI.
-        }                         // for all the toggles right side is the active state/true.
+        }                         // For all the toggles, right side is the active state/true.
         slider.style.transform = isActive ? "translateX(70px)" : "translateX(0)";
     }
 
