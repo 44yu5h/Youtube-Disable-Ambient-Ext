@@ -10,7 +10,7 @@
         "128": "assets/icons/128.png"
       },
     "permissions": ["storage"],
-    "host_permissions": ["https://www.youtube.com/*"],
+    "host_permissions": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
     "action": {
         "default_popup": "popup.html"
     },
