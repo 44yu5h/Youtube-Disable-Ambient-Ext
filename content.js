@@ -7,7 +7,11 @@ const observer = new MutationObserver(() => {
         // Menu loads in DOM only when settings is opened/expanded: open and close quickly
         settingsButton.click();
         settingsButton.click();
-        isMenuLoaded = true;
+        setTimeout(() => {
+            settingsButton.click();
+            settingsButton.click();
+            isMenuLoaded = true;
+        }, 1000);
     }
 
     if (isMenuLoaded) {
